@@ -1,7 +1,8 @@
-import type React from "react"
-import "@/app/globals.css"
-import { Inter, Poppins } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
+import type React from "react";
+import "@/app/globals.css";
+import { Inter, Poppins } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import "@livekit/components-styles";
 
 // Use Poppins for headings
 const poppins = Poppins({
@@ -9,14 +10,14 @@ const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
   display: "swap",
-})
+});
 
 // Use Inter for body text
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-})
+});
 
 export const metadata = {
   title: "Phonio.ai - 1st Phone AI Platform",
@@ -33,13 +34,13 @@ export const metadata = {
   verification: {
     google: "pZTAkatNPMhH-qGOyl_zsnIfsnkcs1QGiYollHc3c1g",
   },
-    generator: 'v0.dev'
-}
+  generator: "v0.dev",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -49,5 +50,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

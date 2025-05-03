@@ -1,0 +1,24 @@
+.control-btn {
+  display: flex;
+  width: fit-content;
+}
+
+.control-btn .lk-agent-control-bar {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  padding: 4px;
+}
+
+.lk-button {
+  padding: 4px;
+}
+
+.lk-disconnect-button {
+  padding: 4px;
+}
+
+.lk-button-group-menu {
+  display: none;
+}

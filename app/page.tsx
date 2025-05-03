@@ -1,21 +1,26 @@
-import { Mail } from "lucide-react"
-import { HexagonPattern } from "@/components/icons"
-import { PhonioLogo } from "@/components/phonio-logo"
-import { EarlyAccessButton } from "@/components/early-access-button"
-import { AnnouncementBar } from "@/components/announcement-bar"
-import Link from "next/link"
+import { Mail } from "lucide-react";
+import { HexagonPattern } from "@/components/icons";
+import { PhonioLogo } from "@/components/phonio-logo";
+import { EarlyAccessButton } from "@/components/early-access-button";
+import { AnnouncementBar } from "@/components/announcement-bar";
+import Link from "next/link";
 import {
   ECommercePattern,
   SalesPattern,
   CustomerServicePattern,
   RetentionPattern,
   ArrowIcon,
-} from "@/components/card-patterns"
+} from "@/components/card-patterns";
+import VoiceAgent from "@/components/agent/agent";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <AnnouncementBar />
+
+      <div>
+        <VoiceAgent />
+      </div>
 
       <header className="container mx-auto py-6 px-4">
         <div className="flex justify-between items-center">
@@ -51,7 +56,8 @@ export default function Home() {
             </h1>
 
             <p className="text-lg md:text-xl lg:text-[28px] text-gray-800 -mt-1 mb-8 md:mb-10 lg:mb-16 leading-tight font-normal max-w-xl mx-auto">
-              for marketers, e-commerce, sales, customer service, retention, and growing businesses
+              for marketers, e-commerce, sales, customer service, retention, and
+              growing businesses
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
@@ -102,16 +108,20 @@ export default function Home() {
 
           <div className="max-w-3xl mx-auto text-gray-700 space-y-6 md:space-y-8">
             <p className="text-base md:text-lg leading-relaxed">
-              Phonio is the 1st phone AI and marketing automation platform designed for marketers, e-commerce, sales,
-              customer service, retention, and growing businesses. We empower businesses of all sizes to easily set up
-              complex AI solutions that integrate directly into their workflows.
+              Phonio is the 1st phone AI and marketing automation platform
+              designed for marketers, e-commerce, sales, customer service,
+              retention, and growing businesses. We empower businesses of all
+              sizes to easily set up complex AI solutions that integrate
+              directly into their workflows.
             </p>
 
             <p className="text-base md:text-lg leading-relaxed">
-              While others build phone AI solutions for developers, we're building it for the people who actually use
-              it. Marketers, customer service teams, and e-commerce teams need solutions that integrate directly into
-              their workflows—no coding required. Phonio is designed to be an platform any business department can use,
-              not just programmers.
+              While others build phone AI solutions for developers, we're
+              building it for the people who actually use it. Marketers,
+              customer service teams, and e-commerce teams need solutions that
+              integrate directly into their workflows—no coding required. Phonio
+              is designed to be an platform any business department can use, not
+              just programmers.
             </p>
 
             <div className="pt-4 md:pt-6">
@@ -126,17 +136,30 @@ export default function Home() {
           <PhonioLogo darkMode={true} size="large" className="mb-6" />
 
           <p className="text-gray-400 mb-8 max-w-md">
-            The future of voice AI for marketers, e-commerce, and customer service teams.
+            The future of voice AI for marketers, e-commerce, and customer
+            service teams.
           </p>
 
-          <p className="text-gray-500 text-sm">© 2025 Phonio.ai. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">
+            © 2025 Phonio.ai. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
-function FeatureCard({ title, description, bgColor, pattern }) {
+function FeatureCard({
+  title,
+  description,
+  bgColor,
+  pattern,
+}: {
+  title: string;
+  description: string;
+  bgColor: string;
+  pattern: React.ReactNode;
+}) {
   return (
     <div
       className={`${bgColor} rounded-lg p-5 md:p-6 text-left relative overflow-hidden group transition-all duration-300 hover:shadow-md h-[220px] md:h-[260px] lg:h-[320px] flex flex-col justify-end`}
@@ -148,9 +171,11 @@ function FeatureCard({ title, description, bgColor, pattern }) {
       {pattern}
 
       <div className="relative z-10 mt-auto">
-        <h3 className="text-xl md:text-[24px] font-semibold text-gray-800 mb-1 leading-tight">{title}</h3>
+        <h3 className="text-xl md:text-[24px] font-semibold text-gray-800 mb-1 leading-tight">
+          {title}
+        </h3>
         <p className="text-sm md:text-[16px] text-gray-600">{description}</p>
       </div>
     </div>
-  )
+  );
 }
